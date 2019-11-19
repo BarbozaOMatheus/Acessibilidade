@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, BackHandler, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './estilo';
@@ -13,8 +13,7 @@ export default class Config extends Component {
         <View style={styles.top}>
 
           <TouchableOpacity style={styles.profileImage}
-            delayLongPress={1800}
-            onLongPress={() => this.props.navigation.goBack()}
+            onPress={() => this.props.navigation.navigate('MainScreen')}
           >
             <Icon name="arrow-left" size={40} color="#fabb00" />
           </TouchableOpacity>
@@ -52,7 +51,10 @@ export default class Config extends Component {
           </View>
 
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}>
+            <TouchableOpacity style={styles.bottomItemInner}
+              delayLongPress={1800}
+              onLongPress={() => this.props.navigation.navigate('Dicas')}
+            >
               <Text style={styles.texto}>DICAS</Text>
             </TouchableOpacity>
           </View>

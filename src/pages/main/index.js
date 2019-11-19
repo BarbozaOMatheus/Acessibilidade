@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Alert, View, TouchableOpacity, Linking, PermissionsAndroid } from "react-native";
+import { Alert, View, BackHandler, TouchableOpacity, Linking, PermissionsAndroid } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ContactsWrapper from 'react-native-contacts-wrapper';
 
@@ -12,11 +12,20 @@ export default class Main extends Component {
   onPressCall = (url) => (
     Linking.canOpenURL(url)
       .then((supported) => {
-        if (supported) {
-          return Linking.openURL(url)
-            .catch(() => null);
+        if (!supported) {
+          Alert.alert(
+            'Erro!',
+            'Não foi possível abrir o app',
+            [
+              { text: 'OK' }
+            ],
+            { cancelable: false },
+          );
+        } else {
+          return Linking.openURL(url);
         }
       })
+      .catch((err) => console.error('Um erro ocorreu', err))
   );
 
   onButtonPressed = () => (
@@ -44,7 +53,7 @@ export default class Main extends Component {
 
           <TouchableOpacity style={styles.profileImage}
             delayLongPress={1800}
-            onLongPress={() => this.props.navigation.goBack()}
+            onLongPress={() => this.props.navigation.navigate('Main')}
           >
             <Icon name="arrow-left" size={40} color="#fabb00" />
           </TouchableOpacity>
@@ -86,7 +95,7 @@ export default class Main extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.onPressCall(' https://wa.me/99')}
+              onPress={() => this.onPressCall('whatsapp://send?phone=99')}
             >
               <Icon name="whatsapp" size={65} color="#34af23" />
             </TouchableOpacity>
