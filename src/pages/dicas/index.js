@@ -24,6 +24,27 @@ export default class Sobre extends Component {
 
         <View style={styles.bottom}>
 
+          <View style={{ height: '18%', }}>
+            <Text style={styles.texto}>Obs: Para ouvir basta clicar!</Text>
+          </View>
+
+          <View style={{ padding: 10, }}>
+            <TouchableOpacity style={styles.play}>
+              <Icon name="play" size={30} color="#fabb00" />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.play}>
+              <Icon name="play" size={30} color="#fabb00" />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.play}>
+              <Icon name="play" size={30} color="#fabb00" />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.play}>
+              <Icon name="play" size={30} color="#fabb00" />
+            </TouchableOpacity>
+          </View>
         </View>
 
       </View>

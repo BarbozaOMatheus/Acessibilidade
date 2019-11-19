@@ -29,6 +29,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
     elevation: 24,
   },
+  play: {
+    width: 70,
+    height: 70,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 70,
+    borderWidth: 5,
+    borderColor: '#787878',
+    backgroundColor: '#eee',
+    elevation: 24,
+    marginTop: 10
+  },
   center: {
     height: '3%',
     backgroundColor: '#384736'
@@ -39,6 +51,20 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding: 5,
   },
+  bottomItem: {
+    width: '50%',
+    height: '50%',
+    padding: 4,
+  },
+  bottomItemInner: {
+    flex: 1,
+    backgroundColor: '#d1d1d1',
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: "black",
+    shadowRadius: 10,
+    elevation: 10,
+  }
 });
 
 export default styles;
