@@ -24,7 +24,11 @@ export default class Sobre extends Component {
 
         <View style={styles.bottom}>
 
-          <View style={{ height: '18%', }}>
+          <View style={{ height: '16%', }}>
+            <Text style={styles.texto}>Os botões abaixo são áudios de dicas sobre as funcionalidades do app. </Text>
+          </View>
+
+          <View style={{ height: '16%', }}>
             <Text style={styles.texto}>Obs: Para ouvir basta clicar!</Text>
           </View>
 
@@ -41,9 +45,6 @@ export default class Sobre extends Component {
               <Icon name="play" size={30} color="#fabb00" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.play}>
-              <Icon name="play" size={30} color="#fabb00" />
-            </TouchableOpacity>
           </View>
         </View>
 
