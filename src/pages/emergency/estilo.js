@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#474444',
     flexDirection: 'column',
     padding: 5,
-  },
+  }
 });
 
 export default styles;

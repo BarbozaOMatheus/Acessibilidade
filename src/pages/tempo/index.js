@@ -1,11 +1,41 @@
 import React, { Component } from "react";
-
+import * as RNFS from 'react-native-fs'
 import { View, Text, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './estilo';
 
 export default class Tempo extends Component {
+  
+  state = {
+    time: '',
+    runAtStartup: false 
+  }
+
+  save = () => {
+    if (this.state.time === '') 
+      return
+    
+    let content = `${this.state.time}\n${this.state.runAtStartup}`
+    let filePath = `${RNFS.DocumentDirectoryPath}/config.txt`
+
+    RNFS.writeFile(filePath, content, 'utf8').then(success => {
+        console.log('Configurações salvas com sucesso!')
+    }).catch(error => {
+        console.error(error)
+    })
+  }
+
+  read = () => {
+    let filePath = `${RNFS.DocumentDirectoryPath}/config.txt`
+
+    let content = RNFS.readFile(filePath, 'utf8')
+
+    let aux = content.toString().split('\n')
+
+    this.setState({ time: aux[1]})
+    this.setState({ runAtStartup: aux[2]})
+  }
 
   render() {
     return (
@@ -42,7 +72,8 @@ export default class Tempo extends Component {
           </View>
 
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}>
+            <TouchableOpacity style={styles.bottomItemInner}
+              onPress = {this.read}>
               <Text style={styles.texto, { color: 'black' }}>GRAVAR</Text>
             </TouchableOpacity>
           </View>
