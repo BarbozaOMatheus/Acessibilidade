@@ -28,24 +28,6 @@ export default class Main extends Component {
       .catch((err) => console.error('Um erro ocorreu', err))
   );
 
-  onButtonPressed = () => (
-    PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
-      {
-        'title': 'Contacts',
-        'message': 'This app would like to view your contacts.'
-      },
-      ContactsWrapper.getContact()
-    ).then((contact) => {
-      console.log(contact)
-    })
-      .catch((error) => {
-        console.log("ERROR CODE: ", error.code);
-        console.log("ERROR MESSAGE: ", error.message);
-      })
-  );
-
-
   render() {
     return (
       <View style={styles.conainer}>
@@ -79,7 +61,7 @@ export default class Main extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.onButtonPressed()}
+              onPress={() => this.props.navigation.navigate('Contatos')}
             >
               <Icon name="address-book" size={65} color="black" />
             </TouchableOpacity>
