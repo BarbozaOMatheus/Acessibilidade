@@ -5405,6 +5405,11 @@ react-native-contacts@^4.0.3:
   dependencies:
     react-native-cli "^2.0.1"
 
+react-native-floating-bubble@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-floating-bubble/-/react-native-floating-bubble-1.0.5.tgz#f37a1fcbcffb1a144a12b88e86eca687789f5b24"
+  integrity sha512-ODl/bG1j0aWC8MulyNzsiEhQZlK7+pib/XYW3JA1QMK4dqz3OLC11uX00iqC0vgVIvbkbwgmiqsdCRthZMgNVw==
+
 react-native-fs@^2.16.2:
   version "2.16.2"
   resolved "https://registry.yarnpkg.com/react-native-fs/-/react-native-fs-2.16.2.tgz#a312ce5f418e6d91d13b51e50ba0c49b1da1ec79"
@@ -5436,6 +5441,11 @@ react-native-safe-area-view@^0.14.1:
   integrity sha512-tOxHGQUN83MTmQB4ghoQkibqOdGiX4JQEmeyEv96MKWO/x8T2PJv84ECUos9hD3blPRQwVwSpAid1PPPhrVEaw==
   dependencies:
     debounce "^1.2.0"
+
+react-native-sound@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/react-native-sound/-/react-native-sound-0.11.0.tgz#ad60b55ba8c6dc89917f381ad3713f2738de530f"
+  integrity sha512-4bGAZfni6E2L695NQjOZwNLBQGXgBGYC4Sy+h99K5h0HqNZjCqR0+aLel+ezASxEJDpaH83gylNObXpiqJgdwg==
 
 react-native-vector-icons@^6.6.0:
   version "6.6.0"
