@@ -7,6 +7,7 @@ import Sobre from "./pages/sobre/";
 import Tempo from "./pages/tempo/";
 import Emergency from './pages/emergency/';
 import Contatos from './pages/main/contatos/';
+import Dicas from './pages/dicas';
 
 const AppNavigator = createStackNavigator(
   {
@@ -27,6 +28,9 @@ const AppNavigator = createStackNavigator(
     },
     Emergency: {
       screen: Emergency,
+    },
+    Dicas: {
+      screen: Dicas,
     },
   },
   {

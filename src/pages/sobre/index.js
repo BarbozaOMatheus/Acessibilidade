@@ -13,8 +13,7 @@ export default class Sobre extends Component {
         <View style={styles.top}>
 
           <TouchableOpacity style={styles.profileImage}
-            delayLongPress={1800}
-            onLongPress={() => this.props.navigation.goBack()}
+            onPress={() => this.props.navigation.goBack()}
           >
             <Icon name="arrow-left" size={40} color="#fabb00" />
           </TouchableOpacity>
