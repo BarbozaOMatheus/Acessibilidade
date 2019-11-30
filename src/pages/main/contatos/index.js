@@ -154,7 +154,7 @@ class ContactList extends React.Component {
               renderItem={this.renderItem}
               //Setting the number of column
               numColumns={1}
-              keyExtractor={(item, index) => item.key}
+              keyExtractor={(item, index) => index}
             />
           </View>
         </View>
