@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,13 +10,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     backgroundColor: '#1ec20a',
-    padding: 10
+    padding: 10,
   },
   texto: {
     fontSize: 15,
     fontFamily: 'bold',
-    fontWeight:'700',
-    color: 'white'
+    fontWeight: '700',
+    color: 'white',
   },
   profileImage: {
     width: 123,
@@ -29,27 +29,38 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
     elevation: 24,
   },
-  center: {
-    height: '3%',
-    backgroundColor: '#384736'
-  },
+
   bottom: {
-    height: '43%',
     backgroundColor: '#474444',
     flexDirection: 'column',
     padding: 5,
   },
+
+  textTime: {
+    fontSize: 25,
+    fontFamily: 'bold',
+    fontWeight: '700',
+    //flex: 1,
+    color: 'white',
+    marginEnd: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
   menu: {
-    height: '29%',
+    //margin: '1%',
+    height: '14%',
     backgroundColor: '#474444',
     flexDirection: 'row',
-    padding: 5,
+    //padding: 0,
+    alignContent: 'flex-end',
     alignItems: 'flex-end',
     justifyContent: 'center',
   },
   bottomItem: {
     width: '50%',
-    height: '50%',
+    height: '100%',
+
     padding: 4,
   },
   bottomItemInner: {
@@ -57,10 +68,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#e8dcdc',
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: "black",
+    shadowColor: 'black',
     shadowRadius: 10,
     elevation: 10,
-  }
+  },
 });
 
 export default styles;
