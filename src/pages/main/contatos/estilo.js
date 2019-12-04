@@ -12,6 +12,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#1ec20a',
     padding: 10
   },
+  icone: {
+    //justifyContent: 'flex-end',
+    //alignItems: 'flex-end',
+    padding: 20
+  },
+  textoTitulo: {
+    fontSize: 25,
+    color: 'white',
+    fontFamily: 'bold',
+    fontWeight: '700',
+  },
+  titulo: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingBottom: 15
+  },
   texto: {
     fontSize: 15,
     fontFamily: 'bold',

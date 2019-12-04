@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     padding: 10
   },
   texto: {
-    fontSize: 15,
+    fontSize: 17,
     fontFamily: 'bold',
     fontWeight: '700',
     color: 'white'

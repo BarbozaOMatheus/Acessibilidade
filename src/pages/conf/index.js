@@ -25,8 +25,7 @@ export default class Config extends Component {
         <View style={styles.bottom}>
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              delayLongPress={1800}
-              onLongPress={() => this.props.navigation.navigate('Sobre')}
+              onPress={() => this.props.navigation.navigate('Sobre')}
             >
               <Text style={styles.texto}>SOBRE</Text>
             </TouchableOpacity>
@@ -34,8 +33,7 @@ export default class Config extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              delayLongPress={1800}
-              onLongPress={() => this.props.navigation.navigate('Emergency')}
+              onPress={() => this.props.navigation.navigate('Emergency')}
             >
               <Text style={styles.texto}>EMERGÊNCIA</Text>
             </TouchableOpacity>
@@ -43,8 +41,7 @@ export default class Config extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              delayLongPress={1800}
-              onLongPress={() => this.props.navigation.navigate('Tempo')}
+              onPress={() => this.props.navigation.navigate('Tempo')}
             >
               <Text style={styles.texto}>TEMPO</Text>
             </TouchableOpacity>
@@ -52,8 +49,7 @@ export default class Config extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              delayLongPress={1800}
-              onLongPress={() => this.props.navigation.navigate('Dicas')}
+              onPress={() => this.props.navigation.navigate('Dicas')}
             >
               <Text style={styles.texto}>DICAS</Text>
             </TouchableOpacity>

@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
     padding: 10
   },
   texto: {
-    fontSize: 15,
+    fontSize: 20,
     fontFamily: 'bold',
-    fontWeight:'700',
+    fontWeight:'800',
     color: 'white'
   },
   profileImage: {
@@ -34,11 +34,45 @@ const styles = StyleSheet.create({
     backgroundColor: '#384736'
   },
   bottom: {
-    height: '72%',
+    height: '43%',
     backgroundColor: '#474444',
     flexDirection: 'column',
     padding: 5,
-  }
+  },
+  menu: {
+    height: '29%',
+    backgroundColor: '#474444',
+    flexDirection: 'row',
+    padding: 5,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+  },
+  bottomItem: {
+    width: '50%',
+    height: '50%',
+    padding: 4,
+  },
+  bottomItemInner: {
+    flex: 1,
+    backgroundColor: '#e8dcdc',
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: "black",
+    shadowRadius: 10,
+    elevation: 10,
+  },
+  botao: {
+    flex: 1,
+    backgroundColor: '#e8dcdc',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 70
+  },
+  textoBotao: {
+    fontSize: 20,
+    fontFamily: 'bold',
+    fontWeight:'800',
+  },
 });
 
 export default styles;
