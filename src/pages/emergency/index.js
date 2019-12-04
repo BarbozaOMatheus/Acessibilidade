@@ -45,27 +45,49 @@ export default class Sobre extends Component {
 
     this.setState({ name: aux[1] })
     this.setState({ phoneNumber: aux[2] })
-  }
-  onButtonPressed = () => (
+  };
 
+  lerContatos = () => {
+    PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+        {
+          title: 'Contacts',
+          message: ' This app would like to see your contacts'
+        },
     ContactsWrapper.getContact()
-      .then((contact) => {
+      ).then((contact) => {
         console.log(contact)
       })
       .catch((error) => {
         console.log("ERROR CODE: ", error.code);
         console.log("ERROR MESSAGE: ", error.message);
       })
-  );
+  };
 
-  componentDidMount() {
-    if (Platform.OS === 'android') {
+  /*componentDidMount() {
+    PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+        {
+          title: 'Contacts',
+          message: ' This app would like to see your contacts'
+        },
+    ContactsWrapper.getContact()
+      ).then((contact) => {
+        console.log(contact)
+      })
+      .catch((error) => {
+        console.log("ERROR CODE: ", error.code);
+        console.log("ERROR MESSAGE: ", error.message);
+      })
+  };
+
+    /*if (Platform.OS === 'android') {
       PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
         {
           title: 'Contacts',
           message: ' This app would like to see your contacts'
-        }
+        },
       ).then(() => {
         this.getList();
       })
@@ -83,7 +105,7 @@ export default class Sobre extends Component {
         console.log(contacts);
       }
     })
-  }
+  }*/
 
   render() {
     return (
@@ -98,26 +120,23 @@ export default class Sobre extends Component {
 
         </View>
 
-        <View style={styles.center}>
-        </View>
-        <View style={styles.bottom}>
-          <View style={{ height: '10%', }}>
-            <Text style={styles.texto}>Contato de emergência:</Text>
-            <Text style={styles.texto}>{this.state.name = "Police"}</Text>
-            <Text style={styles.texto}>{this.state.phoneNumber = "8938349"}</Text>
-          </View>
-          <View style={{ height: '60%', }}>
-            <Text style={styles.texto}></Text>
-          </View>
+        <View style={styles.center}></View>
 
-          <View style={styles.menu}>
-            <View style={styles.bottomItem}>
-              <TouchableOpacity style={styles.bottomItemInner}
-                onPress={() => this.onButtonPressed()}
-              >
-                <Text style={styles.texto2}>Escolher Contato</Text>
-              </TouchableOpacity>
-            </View>
+        <View style={styles.bottom}>
+          <View style={{ height: '30%', }}>
+            <Text style={styles.texto}>Contato de emergência: </Text>
+            <Text style={styles.texto}>Police </Text>
+            <Text style={styles.texto}>8938349 </Text>
+          </View>
+        </View>
+
+        <View style={styles.menu}>
+          <View style={styles.bottomItem}>
+            <TouchableOpacity style={styles.botao}
+              onPress={() => this.lerContatos()}
+            >
+              <Text style={styles.textoBotao}>Buscar Contato</Text>
+            </TouchableOpacity>
           </View>
 
         </View>
