@@ -104,7 +104,7 @@ class ContactList extends React.Component {
       }
     })
   }
-
+//this.onPressCall('whatsapp://send?phone={`${phone.number}`}'
   renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
 
@@ -120,12 +120,14 @@ class ContactList extends React.Component {
       </TouchableOpacity>
 
       <TouchableOpacity style={estilo.icone}
-        onPress={() => this.onPressCall('whatsapp://send?phone={phone.number}')}
+        onPress={() => Linking.openURL('whatsapp://send?phone={`${phone.number}`')}
       >
+
         <Icon name="whatsapp" size={40} color="#34af23" />
       </TouchableOpacity>
 
     </View>
+
   )
   render() {
     return (

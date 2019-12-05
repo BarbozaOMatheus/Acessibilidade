@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
     elevation: 24,
   },
   play: {
-    width: 70,
-    height: 70,
+    width: 100,
+    height: 100,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 70,

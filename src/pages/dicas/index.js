@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './estilo';
@@ -69,21 +69,27 @@ export default class Sobre extends Component {
           <View style={{ height: '16%', }}>
             <Text style={styles.texto}>Obs: Para ouvir basta clicar!</Text>
           </View>
-
+  
+        <ScrollView>
           <View style={{ padding: 10, }}>
             <TouchableOpacity style={styles.play} onPress={this.manageSound} >
-              <Icon name="play" size={30} color="#fabb00" />
+              <Icon name="play" size={50} color="#fabb00" />
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.play} onPress={this.manageSound}>
-              <Icon name="play" size={30} color="#fabb00" />
+              <Icon name="play" size={50} color="#fabb00" />
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.play} onPress={this.manageSound}>
-              <Icon name="play" size={30} color="#fabb00" />
+              <Icon name="play" size={50} color="#fabb00" />
             </TouchableOpacity>
 
+            <TouchableOpacity style={styles.play} onPress={this.manageSound}>
+              <Icon name="play" size={50} color="#fabb00" />
+            </TouchableOpacity>
+            
           </View>
+        </ScrollView>
         </View>
 
       </View>
