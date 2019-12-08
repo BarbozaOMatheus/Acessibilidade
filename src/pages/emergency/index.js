@@ -4,7 +4,7 @@ import * as RNFS from 'react-native-fs'
 import {
   View, Text, StyleSheet, Platform, PermissionsAndroid,
   Linking,
-  Alert, FlatList, TextInput, TouchableOpacity
+  Alert, TextInput, TouchableOpacity
 } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Contacts from 'react-native-contacts';
@@ -14,9 +14,10 @@ import styles from './estilo';
 
 export default class Sobre extends Component {
 
+
   state = {
     name: '',
-    phoneNumber: ''
+    phoneNumber: '',
   }
 
   save = () => {
@@ -45,40 +46,6 @@ export default class Sobre extends Component {
 
     this.setState({ name: aux[1] })
     this.setState({ phoneNumber: aux[2] })
-  };
-
-  lerContatos = () => {
-    PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
-        {
-          title: 'Contacts',
-          message: ' This app would like to see your contacts'
-        },
-    ContactsWrapper.getContact()
-      ).then((contact) => {
-        console.log(contact)
-      })
-      .catch((error) => {
-        console.log("ERROR CODE: ", error.code);
-        console.log("ERROR MESSAGE: ", error.message);
-      })
-  };
-
-  /*componentDidMount() {
-    PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
-        {
-          title: 'Contacts',
-          message: ' This app would like to see your contacts'
-        },
-    ContactsWrapper.getContact()
-      ).then((contact) => {
-        console.log(contact)
-      })
-      .catch((error) => {
-        console.log("ERROR CODE: ", error.code);
-        console.log("ERROR MESSAGE: ", error.message);
-      })
   };
 
     /*if (Platform.OS === 'android') {
@@ -133,7 +100,7 @@ export default class Sobre extends Component {
         <View style={styles.menu}>
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.botao}
-              onPress={() => this.lerContatos()}
+              onPress={() => Linking.openURL('content://com.android.contacts/contacts')}
             >
               <Text style={styles.textoBotao}>Buscar Contato</Text>
             </TouchableOpacity>

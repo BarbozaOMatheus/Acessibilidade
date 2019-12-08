@@ -90,7 +90,7 @@ export default class Main extends Component {
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
               delayLongPress={this.state.time}
-              onLongPress={() => this.props.navigation.navigate('Contatos')}
+              onLongPress={() => Linking.openURL('content://com.android.contacts/contacts')}
             >
               <Icon name="address-book" size={65} color="black" />
             </TouchableOpacity>

@@ -74,8 +74,6 @@ class ContactList extends React.Component {
 })
   }
 
-//this.onPressCall('whatsapp://send?phone={`${phone.number}`}'
-
   render() {
     return(
     <View style={estilo.container}>
