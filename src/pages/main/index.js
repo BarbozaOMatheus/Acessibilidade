@@ -14,6 +14,11 @@ export default class Main extends Component {
     runAtStartup: false
   }
 
+  constructor(props) {
+    super(props)
+    this.loadFile()
+  }
+
   onPressCall = (url) => (
     Linking.canOpenURL(url)
       .then((supported) => {
@@ -34,7 +39,9 @@ export default class Main extends Component {
   );
 
   async componentDidMount() {
-    this.loadFile()
+    this.focusListener = this.props.navigation.addListener('didFocus', () => {
+      this.loadFile()
+    });
   }
 
   loadFile = async () => {
