@@ -24,15 +24,18 @@ export const save = (array = [], fileName) => {
     })
 }
 
-export async function read(fileName) {
+export const read = async (fileName) => {
     const filePath = `${RNFS.DocumentDirectoryPath}/${fileName}`
     let data = undefined
     
-    const content = await RNFS.readFile(filePath, 'utf8')
-    
-    if (content)
-        data = content.split('\n')
+    if (await RNFS.exists(filePath)) {
+        const content = await RNFS.readFile(filePath, 'utf8')
+            
+        if (content !== '')
+            data = content.split('\n') 
+    }     
     //retorna um array de string com os dados do arquivo
     return data
 }
+
 

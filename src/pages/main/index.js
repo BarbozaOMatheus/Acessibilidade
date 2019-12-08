@@ -3,11 +3,16 @@ import React, { Component } from "react";
 import { Alert, View, BackHandler, TouchableOpacity, Linking, PermissionsAndroid } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ContactsWrapper from 'react-native-contacts-wrapper';
-
+import { read } from '../../data'
 
 import styles from './estilo';
 
 export default class Main extends Component {
+
+  state = {
+    time: 0,
+    runAtStartup: false
+  }
 
   onPressCall = (url) => (
     Linking.canOpenURL(url)
@@ -28,20 +33,35 @@ export default class Main extends Component {
       .catch((err) => console.error('Um erro ocorreu', err))
   );
 
+  async componentDidMount() {
+    this.loadFile()
+  }
+
+  loadFile = async () => {
+    const data = await read('config.txt')
+
+    if (data)
+      this.setState({
+        time: parseInt(data[0]),
+        runAtStartup: Boolean(data[1]==='true')
+      }) 
+    console.log(this.state.time)  
+  }
+
   render() {
     return (
       <View style={styles.conainer}>
         <View style={styles.top}>
 
           <TouchableOpacity style={styles.profileImage}
-            delayLongPress={1800}
-            onLongPress={() => this.props.navigation.navigate('Main')}
+            delayLongPress={this.state.time}
+            onLongPress={() => this.props.navigation.navigate('MainScreen')}
           >
             <Icon name="arrow-left" size={40} color="#fabb00" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.profileImageConfig}
-            delayLongPress={1800}
+            delayLongPress={this.state.time}
             onLongPress={() => this.props.navigation.navigate('Config')}
           >
             <Icon name="cog" size={40} color="#0e6ee3" />
@@ -53,7 +73,8 @@ export default class Main extends Component {
         <View style={styles.bottom}>
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.onPressCall('tel:190')}
+              delayLongPress={this.state.time}
+              onLongPress={() => this.onPressCall('tel:190')}
             >
               <Icon name="phone" size={65} color="red" />
             </TouchableOpacity>
@@ -61,7 +82,8 @@ export default class Main extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.props.navigation.navigate('Contatos')}
+              delayLongPress={this.state.time}
+              onLongPress={() => this.props.navigation.navigate('Contatos')}
             >
               <Icon name="address-book" size={65} color="black" />
             </TouchableOpacity>
@@ -69,7 +91,8 @@ export default class Main extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.onPressCall('https://www.google.com')}
+              delayLongPress={this.state.time}
+              onLongPress={() => this.onPressCall('https://www.google.com')}
             >
               <Icon name="google" size={65} color="#0e6ee3" />
             </TouchableOpacity>
@@ -77,13 +100,13 @@ export default class Main extends Component {
 
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.onPressCall('whatsapp://send?phone=99')}
+              delayLongPress={this.state.time}
+              onLongPress={() => this.onPressCall('whatsapp://send?phone=99')}
             >
               <Icon name="whatsapp" size={65} color="#34af23" />
             </TouchableOpacity>
           </View>
         </View>
-
       </View>
     );
   }
