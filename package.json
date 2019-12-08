@@ -10,8 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/cli-platform-android": "^3.0.3",
     "react": "16.9.0",
-    "react-native": "0.61.4",
+    "react-native": "^0.61.5",
     "react-native-contacts": "^4.0.3",
     "react-native-contacts-wrapper": "^0.2.4",
     "react-native-floating-bubble": "^1.0.5",
