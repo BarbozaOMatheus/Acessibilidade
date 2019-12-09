@@ -11,124 +11,85 @@ import {
   checkPermission 
 } from "react-native-floating-bubble";
 
+import IntentLauncher, { IntentConstant } from 'react-native-intent-launcher';
+
 
 const AppConatiner = createAppContainer(Routes);
-var check = 0;
-var count = 0;
+
+
 
 export default class App extends Component {
-  
+  constructor(props) {
+    super(props);
+
+      
+  }
 	state = {
     appState: AppState.currentState,
     
   };
-
-  async componentDidMount() {
-    if (Platform.OS === 'android') {
-      const url = await Linking.getInitialURL();
-      this.navigate(url);
-    } else {
-      Linking.addEventListener('url', this.handleOpenURL);
-    }
-  }
-
-  componentWillUnmount() {
-    Linking.removeEventListener('url', this.handleOpenURL);
-  }
-
-  handleOpenURL = (event) => {
-    this.navigate(event.url);
-  };
-
-  navigate = (url) => {
-    
-    const route = url.replace(/.*?:\/\//g, '');
-    const recipe = route.match(/\/([^\/]+)\/?$/)[1];
-    const routeName = route.split('/')[0];
   
-    // routeName: recipe
-    // recipe: teste (parâmetro)
-  };
 
   componentDidMount() {
     AppState.addEventListener('change', this._handleAppStateChange);
-    //DeviceEventEmitter.addListener("floating-bubble-press", this.pressBotao.bind(this));
+    DeviceEventEmitter.addListener("floating-bubble-press", this.pressBotao.bind(this));
     
-
   }
-
-  // componentDidUpdate() {
-  //   AppState.addEventListener('change', this._handleAppStateChange);
-  //   DeviceEventEmitter.addListener("floating-bubble-press", this.pressBotao.bind(this));
-    
-
-  // }
-  
 
   componentWillUnmount() {
     AppState.removeEventListener('change', this._handleAppStateChange);
-    //DeviceEventEmitter.Remove();
+    DeviceEventEmitter.Remove();
   }
 
-	 _handleAppStateChange = (nextAppState) => {
+	_handleAppStateChange = (nextAppState) => {
       if (this.state.appState.match(/background/) &&
-           nextAppState === 'active') {
-          if(check != 0){
-            //this.remove();
-            console.log("removed");
-          }
+           nextAppState === 'active') {          
+        this.remove();
+        console.log("removed");          
 
       }else if (this.state.appState.match(/active/) &&
                   nextAppState === 'background') {
 
-        if (check == 0) {
-          //this.permite();
-          //this.inicia();
-          
-        }
-
-        //this.adiciona();
+          this.permite();
+          this.inicia();
+          this.adiciona();
       }
       this.setState({appState: nextAppState});
-  };
+  }
 
-  pressBotao(e) {
-    //this.remove();yeshua
-  	Linking.openURL('acessibilidade://acessibilidade/.MainApplication').catch((error) => Alert.alert('erro ao abrir o app' + error));
-    
-    
+  pressBotao(e) {  	
+    IntentLauncher.startActivity({
+      action: 'android.intent.action.MAIN',           
+      category: 'android.intent.category.LAUNCHER', 
+      className: 'com.acessibilidade.MainActivity', 
+      packageName: 'com.acessibilidade',   
+      flags: 131072,     
+    })
     
   }
 
   permite() {
     requestPermission()
       .catch(Alert.alert('Permissão negada'));
-  }
-
-	inicia() {    
-
-    initialize()
-      .catch(() => Alert.alert("Falha ao inicializar o botão flutuante")); 
-  	
-    check += 1;
-    console.log("check: " +check);
-	  
-  }
-    
-
-  
-  adiciona() {
 
     requestPermission()
       checkPermission()
         .then((value) => console.log(`Permission: ${value ? 'Yes' : 'No'}`))
         .catch(() => console.log("Failed to check"));
+  }
 
-    showFloatingBubble(10, 10)
-      .catch(() => console.log("Failed to Floating Bubble Added"));
+	inicia() { 
+    initialize()
+      .catch(() => Alert.alert("Falha ao inicializar o botão flutuante"));  	
+  }
     
-      count +=1;
-     console.log('count'+count);
+
+  
+  adiciona() {    
+
+    showFloatingBubble(350, 300)
+      .catch(() => console.log("Failed to Floating Bubble Added"));    
+    
   }
 
   remove() {
@@ -138,10 +99,7 @@ export default class App extends Component {
   
   render(){
 
-
-
-    return <AppConatiner />
-    
+    return <AppConatiner />    
 
   }
 }
