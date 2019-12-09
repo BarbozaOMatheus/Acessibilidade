@@ -13,10 +13,19 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   texto: {
-    fontSize: 15,
+    fontSize: 20,
     fontFamily: 'bold',
-    fontWeight: '700',
+    fontWeight: '800',
     color: 'white',
+  },
+  textoBotao: {
+    fontSize: 20,
+    fontFamily: 'bold',
+    fontWeight:'800',
+  },
+  botaoTempo: {
+    fontSize: 20,
+    fontFamily: 'bold',
   },
   profileImage: {
     width: 123,
@@ -49,7 +58,7 @@ const styles = StyleSheet.create({
 
   menu: {
     //margin: '1%',
-    height: '14%',
+    height: '15%',
     backgroundColor: '#474444',
     flexDirection: 'row',
     //padding: 0,
@@ -60,8 +69,8 @@ const styles = StyleSheet.create({
   bottomItem: {
     width: '50%',
     height: '100%',
-
     padding: 4,
+    borderRadius: 70
   },
   bottomItemInner: {
     flex: 1,
@@ -71,6 +80,14 @@ const styles = StyleSheet.create({
     shadowColor: 'black',
     shadowRadius: 10,
     elevation: 10,
+    borderRadius: 70,
+  },
+  botao: {
+    flex: 1,
+    backgroundColor: '#e8dcdc',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 70
   },
 });
 
