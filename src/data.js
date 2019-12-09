@@ -1,5 +1,5 @@
 import * as RNFS from 'react-native-fs'
-
+import { Alert } from 'react-native'
 //exemplo de uso da função save
 //save([var1, var2, ...], 'arquivo.txt')
 //exemplo de uso da função read
@@ -19,6 +19,14 @@ export const save = (array = [], fileName) => {
 
     RNFS.writeFile(filePath, content, 'utf8').then(success => {
       console.log('Dados salvos com sucesso!')
+      Alert.alert(
+            'Salvo com sucesso',
+            '',
+            [
+              { text: 'Ok' }
+            ],
+            { cancelable: true },
+          );
     }).catch(error => {
       console.error(error)
     })

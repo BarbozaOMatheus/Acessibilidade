@@ -38,6 +38,7 @@ export default class Main extends Component {
             { cancelable: false },
           );
         } else {
+          console.log(this.state.time)
           return Linking.openURL(url);
         }
       })

@@ -33,6 +33,14 @@ export default class Sobre extends Component {
             phoneNumber: contact.phone
           })
           save([this.state.name, this.state.phoneNumber], 'emergencyContact.txt')
+          Alert.alert(
+            'Salvo com sucesso',
+            '',
+            [
+              { text: 'Ok' }
+            ],
+            { cancelable: true },
+          );
         })
         .catch((error) => {
             console.log("ERROR CODE: ", error.code);
