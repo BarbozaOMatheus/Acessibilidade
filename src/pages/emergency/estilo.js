@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     padding: 10
   },
   texto: {
-    fontSize: 20,
+    fontSize: 25,
     fontFamily: 'bold',
     fontWeight:'800',
     color: 'white'
@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     height: '43%',
     backgroundColor: '#474444',
     flexDirection: 'column',
-    padding: 5,
+    alignItems: 'center',
+    padding: 5
   },
   menu: {
     height: '29%',
@@ -73,6 +74,21 @@ const styles = StyleSheet.create({
     fontFamily: 'bold',
     fontWeight:'800',
   },
+  title: {
+    fontSize: 30,
+    fontFamily: 'bold',
+    fontWeight:'800',
+    marginBottom: 10,
+    color: 'white'
+  },
+  viewContact: {
+    height: '30%',
+    padding: 10, 
+    alignItems: 'center', 
+    borderRadius: 4, 
+    borderWidth: 0.5, 
+    borderColor: 'white'
+  }
 });
 
 export default styles;

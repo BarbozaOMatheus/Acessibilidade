@@ -10,13 +10,19 @@ import styles from './estilo';
 export default class Main extends Component {
 
   state = {
-    time: 0,
-    runAtStartup: false
+    config: {
+      time: 0,
+      runAtStartup: false
+    },
+    emergencyContact: {
+      name: 'Police',
+      phoneNumber: '190'
+    }
   }
 
   constructor(props) {
     super(props)
-    this.loadFile()
+    this.loadData()
   }
 
   onPressCall = (url) => (
@@ -40,19 +46,25 @@ export default class Main extends Component {
 
   async componentDidMount() {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
-      this.loadFile()
+      this.loadData()
     });
   }
 
-  loadFile = async () => {
-    const data = await read('config.txt')
+  loadData = async () => {
+    const config = await read('config.txt')
+    const emergencyContact = await read('emergencyContact.txt')
 
-    if (data)
-      this.setState({
-        time: parseInt(data[0]),
-        runAtStartup: Boolean(data[1]==='true')
-      }) 
-    console.log(this.state.time)  
+    if (config)
+      this.setState({config: {
+          time: parseInt(config[0]),
+          runAtStartup: Boolean(config[1]==='true')
+        }})    
+
+    if (emergencyContact) 
+      this.setState({emergencyContact: {
+        name: emergencyContact[0],
+        phoneNumber: emergencyContact[1]
+      }})
   }
 
   render() {
@@ -81,7 +93,7 @@ export default class Main extends Component {
           <View style={styles.bottomItem}>
             <TouchableOpacity style={styles.bottomItemInner}
               delayLongPress={this.state.time}
-              onLongPress={() => this.onPressCall('tel:190')}
+              onLongPress={() => this.onPressCall(`tel:${this.state.emergencyContact.phoneNumber}`)}
             >
               <Icon name="phone" size={65} color="red" />
             </TouchableOpacity>
