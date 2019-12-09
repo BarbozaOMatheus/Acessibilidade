@@ -84,11 +84,11 @@ const styles = StyleSheet.create({
   viewContact: {
     flex: 1,
     height: '30%',
-    width: '70%',
+    width: '90%',
     padding: 10, 
     alignItems: 'center',
     justifyContent: 'center', 
-    borderRadius: 70, 
+    borderRadius: 50, 
     borderWidth: 0.5, 
     borderColor: '#787878',
     backgroundColor: '#eee',

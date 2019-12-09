@@ -56,7 +56,7 @@ export default class Sobre extends Component {
       this.setState({
         name: data[0],
         phoneNumber: data[1]
-      })   
+      })    
   }
 
   render() {
