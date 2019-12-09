@@ -51,7 +51,7 @@ export default class Tempo extends Component {
         <View style={styles.center} />
 
         <View style={styles.bottom}>
-          <View style={{height: '30%'}}>
+          <View style={{height: '30%',flexDirection: 'row',alignItems: 'flex-start',justifyContent: 'space-between'}}>
             <Text style={styles.texto}>Início Automático</Text>
             <Switch
               style={{size: '50'}}
@@ -72,7 +72,7 @@ export default class Tempo extends Component {
                 style={styles.bottomItemInner}
                 id="menosTempo"
                 onPress={() => this.menosTempo()}>
-                <Text>-0.5ms</Text>
+                <Text style={styles.botaoTempo}>-0.5ms</Text>
               </TouchableOpacity>
             </View>
 
@@ -81,7 +81,7 @@ export default class Tempo extends Component {
                 style={styles.bottomItemInner}
                 id="maisTempo"
                 onPress={() => this.maisTempo()}>
-                <Text>+0.5ms</Text>
+                <Text style={styles.botaoTempo}>+0.5ms</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -90,9 +90,9 @@ export default class Tempo extends Component {
         <View style={styles.menu}>
           <View style={styles.bottomItem}>
             <TouchableOpacity
-              style={styles.bottomItemInner}
+              style={styles.botao}
               onPress={() => save([this.state.time, this.state.runAtStartup], 'config.txt')}>
-              <Text style={(styles.texto, {color: 'black'})}>GRAVAR</Text>
+              <Text style={styles.textoBotao}>GRAVAR</Text>
             </TouchableOpacity>
           </View>
         </View>

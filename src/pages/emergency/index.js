@@ -69,8 +69,8 @@ export default class Sobre extends Component {
         <View style={styles.bottom}>
           <Text style={styles.title}>Contato de emergência: </Text>
           <View style={styles.viewContact}>
-            <Text style={styles.texto}>{this.state.name}</Text>
-            <Text style={styles.texto}>{this.state.phoneNumber} </Text>
+            <Text style={styles.textoViewContact}>{this.state.name}</Text>
+            <Text style={styles.textoViewContact}>{this.state.phoneNumber} </Text>
           </View>
         </View>
 

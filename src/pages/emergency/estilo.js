@@ -82,12 +82,21 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   viewContact: {
+    flex: 1,
     height: '30%',
+    width: '70%',
     padding: 10, 
-    alignItems: 'center', 
-    borderRadius: 4, 
+    alignItems: 'center',
+    justifyContent: 'center', 
+    borderRadius: 70, 
     borderWidth: 0.5, 
-    borderColor: 'white'
+    borderColor: '#787878',
+    backgroundColor: '#eee',
+  },
+  textoViewContact: {
+    fontSize: 30,
+    fontFamily: 'bold',
+    fontWeight:'800',
   }
 });
 
