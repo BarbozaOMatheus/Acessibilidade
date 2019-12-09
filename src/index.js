@@ -30,7 +30,7 @@ export default class App extends Component {
   };
   
 
-  componentDidMount() {
+  /*componentDidMount() {
     AppState.addEventListener('change', this._handleAppStateChange);
     DeviceEventEmitter.addListener("floating-bubble-press", this.pressBotao.bind(this));
     
@@ -39,7 +39,7 @@ export default class App extends Component {
   componentWillUnmount() {
     AppState.removeEventListener('change', this._handleAppStateChange);
     DeviceEventEmitter.Remove();
-  }
+  }*/
 
 	_handleAppStateChange = (nextAppState) => {
       if (this.state.appState.match(/background/) &&
