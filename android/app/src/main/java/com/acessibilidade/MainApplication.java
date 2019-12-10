@@ -5,6 +5,7 @@ import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.reactnativecommunity.slider.ReactSliderPackage;
+import com.poberwong.launcher.IntentLauncherPackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.reactlibrary.RNFloatingBubblePackage;
 import com.facebook.react.ReactNativeHost;
