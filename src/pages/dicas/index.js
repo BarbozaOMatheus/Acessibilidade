@@ -4,50 +4,17 @@ import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './estilo';
+import DicaItem from "./DicaItem";
 
-var Sound = require('react-native-sound');
-var audio = null;
-Sound.setCategory('Playback'); // true = mixWithOthers
 
-var count = 0;
 
 export default class Sobre extends Component {
   constructor(props) {
-    super(props);  
-    
-      audio = new Sound('audio.mp3', Sound.MAIN_BUNDLE, (error) => {
-        if (error) {
-          console.log('Erro ao carregar o audio', error);
-          return;
-        }
-      }); 
-    
+    super(props); 
   }
-
-  manageSound(){ 
-    console.log('duration in seconds: ' + audio.getDuration() + 'number of channels: ' + audio.getNumberOfChannels());
-      // Play the sound with an onEnd callback
-
-    if (count%2 == 0) { 
-      audio.play((success) => {
-        if (!success) {
-          console.log('playback failed due to audio decoding errors');
-        }
-      });
-    }else {
-      audio.pause((success) => {
-        if (!success) {
-          console.log('playback failed due to audio decoding errors');
-        }
-      });
-    }
-    
-    count += 1;
-  }
-  
   render() {
     return (
-      <View style={styles.conainer}>
+      <View style={styles.container}>
         <View style={styles.top}>
 
           <TouchableOpacity style={styles.profileImage}
@@ -71,23 +38,13 @@ export default class Sobre extends Component {
           </View>
   
         <ScrollView>
-          <View style={{ padding: 10, }}>
-            <TouchableOpacity style={styles.play} onPress={this.manageSound} >
-              <Icon name="play" size={50} color="#fabb00" />
-            </TouchableOpacity>
+          <View>
+            <DicaItem icone="cog" audio="" cor="#0e6ee3"></DicaItem>
+            <DicaItem icone="phone" audio="ligacaodeemergencia.mpeg" cor="red"></DicaItem>
+            <DicaItem icone="address-book" audio="rock.mp3" cor="black"></DicaItem>
+            <DicaItem icone="google" audio="audio.mp3" cor="#0e6ee3"></DicaItem>
+            <DicaItem icone="whatsapp" audio="audio.mp3" cor="#34af23"></DicaItem>
 
-            <TouchableOpacity style={styles.play} onPress={this.manageSound}>
-              <Icon name="play" size={50} color="#fabb00" />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.play} onPress={this.manageSound}>
-              <Icon name="play" size={50} color="#fabb00" />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.play} onPress={this.manageSound}>
-              <Icon name="play" size={50} color="#fabb00" />
-            </TouchableOpacity>
-            
           </View>
         </ScrollView>
         </View>
