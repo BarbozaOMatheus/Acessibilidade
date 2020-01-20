@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity, Switch} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { save, read } from '../../data'
+import {save, read} from '../../data';
 import styles from './estilo';
 
 export default class Tempo extends Component {
   state = {
     time: 0,
-    runAtStartup: false
+    runAtStartup: false,
   };
 
   maisTempo = () => {
     this.setState({
-      time: this.state.time + 500
+      time: this.state.time + 500,
     });
   };
   menosTempo = () => {
     if (this.state.time > 0) {
       this.setState({
-        time: this.state.time - 500
+        time: this.state.time - 500,
       });
     }
   };
@@ -28,13 +28,13 @@ export default class Tempo extends Component {
   };
 
   async componentDidMount() {
-    const data = await read('config.txt')
+    const data = await read('config.txt');
 
     if (data)
       this.setState({
         time: parseInt(data[0]),
-        runAtStartup: Boolean(data[1]==='true')
-      }) 
+        runAtStartup: Boolean(data[1] === 'true'),
+      });
   }
 
   render() {
@@ -48,23 +48,29 @@ export default class Tempo extends Component {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.center} />
-
         <View style={styles.bottom}>
-          <View style={{height: '30%',flexDirection: 'row',alignItems: 'flex-start',justifyContent: 'space-between'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              padding: 5,
+            }}>
             <Text style={styles.texto}>Início Automático</Text>
             <Switch
-              style={{size: '50'}}
+              style={{size: '50', marginLeft: 30}}
               onValueChange={this.toggleSwitch}
               value={this.state.runAtStartup}
             />
           </View>
 
-          <View style={{height: '8%'}}>
-            <Text style={styles.texto}>Tempo pressionando (milisegundos)</Text>
+          <View
+            style={{
+              marginTop: 50,
+              flexDirection: 'row',
+            }}>
+            <Text style={styles.texto}>Tempo pressionando: </Text>
+            <Text style={styles.textTime}>{this.state.time}</Text>
           </View>
-
-          <Text style={styles.textTime}>{this.state.time}</Text>
 
           <View style={styles.menu}>
             <View style={styles.bottomItem}>
@@ -72,7 +78,7 @@ export default class Tempo extends Component {
                 style={styles.bottomItemInner}
                 id="menosTempo"
                 onPress={() => this.menosTempo()}>
-                <Text style={styles.botaoTempo}>-0.5ms</Text>
+                <Text style={styles.texto}>-0.5ms</Text>
               </TouchableOpacity>
             </View>
 
@@ -81,20 +87,17 @@ export default class Tempo extends Component {
                 style={styles.bottomItemInner}
                 id="maisTempo"
                 onPress={() => this.maisTempo()}>
-                <Text style={styles.botaoTempo}>+0.5ms</Text>
+                <Text style={styles.texto}>+0.5ms</Text>
               </TouchableOpacity>
             </View>
           </View>
-        </View>
-
-        <View style={styles.menu}>
-          <View style={styles.bottomItem}>
-            <TouchableOpacity
-              style={styles.botao}
-              onPress={() => save([this.state.time, this.state.runAtStartup], 'config.txt')}>
-              <Text style={styles.textoBotao}>GRAVAR</Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() =>
+              save([this.state.time, this.state.runAtStartup], 'config.txt')
+            }>
+            <Icon name="check-circle" size={70} color="green" />
+          </TouchableOpacity>
         </View>
       </View>
     );

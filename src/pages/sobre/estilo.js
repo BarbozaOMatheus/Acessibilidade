@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,34 +9,32 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: '#1ec20a',
-    padding: 10
+    backgroundColor: '#8e44ad',
   },
   texto: {
-    fontSize: 15,
-    fontFamily: 'bold',
-    fontWeight:'700',
-    color: 'white'
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#666',
+  },
+  titulo: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'black',
   },
   profileImage: {
-    width: 123,
-    height: 123,
+    width: 120,
+    height: 120,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 70,
-    borderWidth: 5,
-    borderColor: '#787878',
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: '#666',
     backgroundColor: '#eee',
-    elevation: 24,
-  },
-  center: {
-    height: '3%',
-    backgroundColor: '#384736'
   },
   bottom: {
-    height: '72%',
-    backgroundColor: '#474444',
+    height: '75%',
     flexDirection: 'column',
+    flexWrap: 'wrap',
     padding: 5,
   },
 });

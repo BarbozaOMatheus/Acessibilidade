@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,38 +9,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: '#1ec20a',
-    padding: 10
-  },
-  profileImageConfig: {
-    width: 123,
-    height: 123,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 70,
-    borderWidth: 5,
-    borderColor: '#787878',
-    backgroundColor: '#eee',
-    elevation: 24,
+    backgroundColor: '#8e44ad',
   },
   profileImage: {
-    width: 123,
-    height: 123,
+    width: 120,
+    height: 120,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 70,
-    borderWidth: 5,
-    borderColor: '#787878',
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: '#666',
     backgroundColor: '#eee',
-    elevation: 24,
-  },
-  center: {
-    height: '3%',
-    backgroundColor: '#384736'
   },
   bottom: {
-    height: '72%',
-    backgroundColor: '#474444',
+    height: '75%',
     flexDirection: 'row',
     flexWrap: 'wrap',
     padding: 5,
@@ -49,17 +31,15 @@ const styles = StyleSheet.create({
     width: '50%',
     height: '50%',
     padding: 4,
-
   },
   bottomItemInner: {
     flex: 1,
-    backgroundColor: '#d1d1d1',
+    backgroundColor: '#ecf0f1',
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: "black",
-    shadowRadius: 10,
     elevation: 10,
-  }
+    borderRadius: 30,
+  },
 });
 
 export default styles;

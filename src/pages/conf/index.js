@@ -1,61 +1,55 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
 
-import { View, Text, BackHandler, TouchableOpacity } from "react-native";
+import {View, Text, BackHandler, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './estilo';
 
 export default class Config extends Component {
-
   render() {
     return (
       <View style={styles.conainer}>
         <View style={styles.top}>
-
-          <TouchableOpacity style={styles.profileImage}
-            onPress={() => this.props.navigation.navigate('MainScreen')}
-          >
+          <TouchableOpacity
+            style={styles.profileImage}
+            onPress={() => this.props.navigation.navigate('MainScreen')}>
             <Icon name="arrow-left" size={40} color="#fabb00" />
           </TouchableOpacity>
-
         </View>
-
-        <View style={styles.center}></View>
 
         <View style={styles.bottom}>
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.props.navigation.navigate('Sobre')}
-            >
+            <TouchableOpacity
+              style={styles.bottomItemInner}
+              onPress={() => this.props.navigation.navigate('Sobre')}>
               <Text style={styles.texto}>SOBRE</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.props.navigation.navigate('Emergency')}
-            >
+            <TouchableOpacity
+              style={styles.bottomItemInner}
+              onPress={() => this.props.navigation.navigate('Emergency')}>
               <Text style={styles.texto}>EMERGÊNCIA</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.props.navigation.navigate('Tempo')}
-            >
+            <TouchableOpacity
+              style={styles.bottomItemInner}
+              onPress={() => this.props.navigation.navigate('Tempo')}>
               <Text style={styles.texto}>TEMPO</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.bottomItem}>
-            <TouchableOpacity style={styles.bottomItemInner}
-              onPress={() => this.props.navigation.navigate('Dicas')}
-            >
+            <TouchableOpacity
+              style={styles.bottomItemInner}
+              onPress={() => this.props.navigation.navigate('Dicas')}>
               <Text style={styles.texto}>DICAS</Text>
             </TouchableOpacity>
           </View>
         </View>
-
       </View>
     );
   }

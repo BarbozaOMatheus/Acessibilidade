@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,95 +9,55 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: '#1ec20a',
-    padding: 10
+    backgroundColor: '#8e44ad',
+    padding: 10,
   },
   texto: {
     fontSize: 25,
     fontFamily: 'bold',
-    fontWeight:'800',
-    color: 'white'
+    fontWeight: '800',
+    color: 'white',
   },
   profileImage: {
-    width: 123,
-    height: 123,
+    width: 120,
+    height: 120,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 70,
-    borderWidth: 5,
-    borderColor: '#787878',
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: '#666',
     backgroundColor: '#eee',
-    elevation: 24,
   },
-  center: {
-    height: '3%',
-    backgroundColor: '#384736'
-  },
+
   bottom: {
-    height: '43%',
-    backgroundColor: '#474444',
+    height: '75%',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: 5
-  },
-  menu: {
-    height: '29%',
-    backgroundColor: '#474444',
-    flexDirection: 'row',
-    padding: 5,
-    alignItems: 'flex-end',
     justifyContent: 'center',
-  },
-  bottomItem: {
-    width: '50%',
-    height: '50%',
-    padding: 4,
-  },
-  bottomItemInner: {
-    flex: 1,
-    backgroundColor: '#e8dcdc',
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: "black",
-    shadowRadius: 10,
-    elevation: 10,
   },
   botao: {
-    flex: 1,
-    backgroundColor: '#e8dcdc',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 70
-  },
-  textoBotao: {
-    fontSize: 20,
-    fontFamily: 'bold',
-    fontWeight:'800',
-  },
-  title: {
-    fontSize: 30,
-    fontFamily: 'bold',
-    fontWeight:'800',
-    marginBottom: 10,
-    color: 'white'
+    marginTop: 50,
+    backgroundColor: '#8e44ad',
+    borderRadius: 25,
+    width: 70,
+    height: 70,
+    elevation: 20,
   },
   viewContact: {
-    flex: 1,
-    height: '30%',
+    height: '40%',
     width: '90%',
-    padding: 10, 
     alignItems: 'center',
-    justifyContent: 'center', 
-    borderRadius: 50, 
-    borderWidth: 0.5, 
-    borderColor: '#787878',
-    backgroundColor: '#eee',
+    justifyContent: 'center',
+    borderRadius: 30,
+    backgroundColor: '#ecf0f1',
+    elevation: 10,
   },
   textoViewContact: {
-    fontSize: 30,
-    fontFamily: 'bold',
-    fontWeight:'800',
-  }
+    fontSize: 25,
+    fontWeight: 'bold',
+  },
 });
 
 export default styles;
