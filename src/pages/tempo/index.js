@@ -51,21 +51,7 @@ export default class Tempo extends Component {
         <View style={styles.bottom}>
           <View
             style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              padding: 5,
-            }}>
-            <Text style={styles.texto}>Início Automático</Text>
-            <Switch
-              style={{size: '50', marginLeft: 30}}
-              onValueChange={this.toggleSwitch}
-              value={this.state.runAtStartup}
-            />
-          </View>
-
-          <View
-            style={{
-              marginTop: 50,
+              marginTop: 30,
               flexDirection: 'row',
             }}>
             <Text style={styles.texto}>Tempo pressionando: </Text>

@@ -42,6 +42,9 @@ const AppNavigator = createStackNavigator(
     },
     Dicas: {
       screen: Dicas,
+      navigationOptions: {
+        title: 'Dicas',
+      },
     },
   },
   {

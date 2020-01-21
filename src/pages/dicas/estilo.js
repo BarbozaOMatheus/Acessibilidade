@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,62 +9,54 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: '#1ec20a',
-    padding: 10
+    backgroundColor: '#8e44ad',
   },
   texto: {
     fontSize: 17,
-    fontFamily: 'bold',
-    fontWeight: '700',
-    color: 'white'
+    fontWeight: 'bold',
+    color: 'black',
   },
   profileImage: {
-    width: 123,
-    height: 123,
+    width: 120,
+    height: 120,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 70,
-    borderWidth: 5,
-    borderColor: '#787878',
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: '#666',
     backgroundColor: '#eee',
-    elevation: 24,
   },
   play: {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 100,
-    borderWidth: 5,
-    borderColor: '#787878',
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: '#666',
     backgroundColor: '#eee',
     elevation: 24,
-    marginTop: 10
-  },
-  center: {
-    height: '3%',
-    backgroundColor: '#384736'
+    marginTop: 10,
   },
   bottom: {
-    height: '72%',
-    backgroundColor: '#474444',
+    height: '75%',
     flexDirection: 'column',
     padding: 5,
   },
   bottomItem: {
     width: '50%',
     height: '50%',
-    padding: 4,
+    padding: 5,
   },
   bottomItemInner: {
     flex: 1,
     backgroundColor: '#d1d1d1',
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: "black",
+    shadowColor: 'black',
     shadowRadius: 10,
     elevation: 10,
-  }
+  },
 });
 
 export default styles;

@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   menu: {
     height: 60,
     flexDirection: 'row',
-    marginTop: 20,
+    marginTop: 50,
   },
   bottomItem: {
     width: '50%',
