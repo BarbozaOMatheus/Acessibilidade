@@ -65,7 +65,7 @@ export default class App extends Component {
       category: 'android.intent.category.LAUNCHER', 
       className: 'com.acessibilidade.MainActivity', 
       packageName: 'com.acessibilidade',   
-      flags: 2000, 
+      flags: 131072, 
 
     })
   }
