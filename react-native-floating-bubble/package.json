@@ -1,0 +1,53 @@
+{
+  "_args": [
+    [
+      "react-native-floating-bubble@1.0.5",
+      "/home/jerry/Documentos/Acessibilidade"
+    ]
+  ],
+  "_from": "react-native-floating-bubble@1.0.5",
+  "_id": "react-native-floating-bubble@1.0.5",
+  "_inBundle": false,
+  "_integrity": "sha512-ODl/bG1j0aWC8MulyNzsiEhQZlK7+pib/XYW3JA1QMK4dqz3OLC11uX00iqC0vgVIvbkbwgmiqsdCRthZMgNVw==",
+  "_location": "/react-native-floating-bubble",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "react-native-floating-bubble@1.0.5",
+    "name": "react-native-floating-bubble",
+    "escapedName": "react-native-floating-bubble",
+    "rawSpec": "1.0.5",
+    "saveSpec": null,
+    "fetchSpec": "1.0.5"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-floating-bubble/-/react-native-floating-bubble-1.0.5.tgz",
+  "_spec": "1.0.5",
+  "_where": "/home/jerry/Documentos/Acessibilidade",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/hybriteq/react-native-floating-bubble/issues"
+  },
+  "description": "Floating bubbles for React Native",
+  "homepage": "https://github.com/hybriteq/react-native-floating-bubble#readme",
+  "keywords": [
+    "react-native"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "react-native-floating-bubble",
+  "peerDependencies": {
+    "react-native": "^0.41.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hybriteq/react-native-floating-bubble.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.5"
+}

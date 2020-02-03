@@ -8,14 +8,16 @@ import {
   hideFloatingBubble, 
   requestPermission, 
   initialize,
-  checkPermission 
+  checkPermission,
+  hasPermission
+
 } from "react-native-floating-bubble";
 
 import IntentLauncher, { IntentConstant } from 'react-native-intent-launcher';
 
 
 const AppConatiner = createAppContainer(Routes);
-
+var count = 0;
 
 
 export default class App extends Component {
@@ -27,60 +29,55 @@ export default class App extends Component {
 	state = {
     appState: AppState.currentState,
     
-  };
-  
+  };  
 
-  /*componentDidMount() {
+  componentDidMount() {    
+  	this.permite();		
     AppState.addEventListener('change', this._handleAppStateChange);
-    DeviceEventEmitter.addListener("floating-bubble-press", this.pressBotao.bind(this));
-    
+    DeviceEventEmitter.addListener("floating-bubble-press", this.pressBotao.bind(this));    
   }
 
-  componentWillUnmount() {
-    AppState.removeEventListener('change', this._handleAppStateChange);
-    DeviceEventEmitter.Remove();
-  }*/
+ 
+  componentWillUnmount() {  	
+   AppState.removeEventListener('change', this._handleAppStateChange);
+   // DeviceEventEmitter.Remove();      
+  }
 
 	_handleAppStateChange = (nextAppState) => {
       if (this.state.appState.match(/background/) &&
            nextAppState === 'active') {          
-        this.remove();
+       this.remove();
         console.log("removed");          
 
       }else if (this.state.appState.match(/active/) &&
-                  nextAppState === 'background') {
+                  nextAppState === 'background') { 
+                     				
+				this.adiciona();
 
-          this.permite();
-          this.inicia();
-          this.adiciona();
       }
       this.setState({appState: nextAppState});
   }
 
   pressBotao(e) {  	
+  	console.log("IntentLauncher");
     IntentLauncher.startActivity({
       action: 'android.intent.action.MAIN',           
       category: 'android.intent.category.LAUNCHER', 
       className: 'com.acessibilidade.MainActivity', 
       packageName: 'com.acessibilidade',   
-      flags: 131072,     
+      flags: 2000, 
+
     })
-    
   }
-
+ 
   permite() {
-    requestPermission()
-      .catch(Alert.alert('Permissão negada'));
-
-    requestPermission()
-      checkPermission()
-        .then((value) => console.log(`Permission: ${value ? 'Yes' : 'No'}`))
-        .catch(() => console.log("Failed to check"));
+    requestPermission().then(this.inicia())
+      .catch(console.log('Permissão negada'));
   }
 
-	inicia() { 
+  inicia() { 
     initialize()
-      .catch(() => Alert.alert("Falha ao inicializar o botão flutuante"));  	
+      .catch(() => console.log("Falha ao inicializar o botão flutuante"));  	
   }
     
 
