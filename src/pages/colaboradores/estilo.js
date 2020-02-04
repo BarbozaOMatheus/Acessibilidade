@@ -11,6 +11,33 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     backgroundColor: '#8e44ad',
   },
+  bloco: {
+    width: 330,
+    flexDirection: 'column',
+    paddingBottom: 40,
+    borderRadius: 50,
+    backgroundColor: '#ecf0f1',
+    elevation: 10,
+  },
+  equipe: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  integrantes: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 10,
+  },
+  texto: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#666',
+  },
+  titulo: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: 'black',
+  },
   profileImage: {
     width: 120,
     height: 120,
@@ -21,34 +48,10 @@ const styles = StyleSheet.create({
     borderColor: '#666',
     backgroundColor: '#eee',
   },
-  ifba: {
-    width: 120,
-    height: 120,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 50,
-    borderWidth: 2,
-    borderColor: '#666',
-    backgroundColor: 'white',
-  },
   bottom: {
     height: '75%',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
     padding: 5,
-  },
-  bottomItem: {
-    width: '50%',
-    height: '50%',
-    padding: 4,
-  },
-  bottomItemInner: {
-    flex: 1,
-    backgroundColor: '#ecf0f1',
-    justifyContent: 'center',
     alignItems: 'center',
-    elevation: 10,
-    borderRadius: 30,
   },
 });
 

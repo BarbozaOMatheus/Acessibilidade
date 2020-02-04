@@ -7,6 +7,7 @@ import Sobre from './pages/sobre/';
 import Tempo from './pages/tempo/';
 import Emergency from './pages/emergency/';
 import Dicas from './pages/dicas';
+import Colaboradores from './pages/colaboradores/';
 
 const AppNavigator = createStackNavigator(
   {
@@ -14,6 +15,12 @@ const AppNavigator = createStackNavigator(
       screen: Main,
       navigationOptions: {
         title: 'MAC',
+      },
+    },
+    Colaboradores: {
+      screen: Colaboradores,
+      navigationOptions: {
+        title: 'Colaboradores',
       },
     },
     Config: {

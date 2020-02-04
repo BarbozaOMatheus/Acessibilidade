@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {Alert, View, TouchableOpacity, Linking} from 'react-native';
+import {Alert, View, TouchableOpacity, Linking, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {read} from '../../data';
 
@@ -69,10 +69,16 @@ export default class Main extends Component {
       <View style={styles.conainer}>
         <View style={styles.top}>
           <TouchableOpacity
-            style={styles.profileImage}
+            style={styles.ifba}
             delayLongPress={this.state.config.time}
-            onLongPress={() => this.props.navigation.navigate('MainScreen')}>
-            <Icon name="arrow-left" size={40} color="#fabb00" />
+            onLongPress={() => this.props.navigation.navigate('Colaboradores')}>
+            <Image
+              style={{width: 80, height: 80}}
+              source={{
+                uri:
+                  'https://portal.ifpe.edu.br/campus/paulista/noticias/divulgado-resultado-final-para-o-cele/if.jpg/@@images/a8c64470-47c7-4f71-a512-201a8507fed3.jpeg',
+              }}
+            />
           </TouchableOpacity>
 
           <TouchableOpacity
