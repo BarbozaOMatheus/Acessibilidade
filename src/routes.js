@@ -14,7 +14,7 @@ const AppNavigator = createStackNavigator(
     MainScreen: {
       screen: Main,
       navigationOptions: {
-        title: 'MAC',
+        title: 'AAS',
       },
     },
     Colaboradores: {

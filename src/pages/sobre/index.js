@@ -24,7 +24,7 @@ export default class Sobre extends Component {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Text style={styles.titulo}>IF MAC</Text>
+            <Text style={styles.titulo}>IF AAS</Text>
           </View>
           <View
             style={{
