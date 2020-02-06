@@ -8,10 +8,7 @@ import {
   hideFloatingBubble, 
   requestPermission, 
   initialize,
-  checkPermission,
-  hasPermission
-
-} from "react-native-floating-bubble";
+ } from "react-native-floating-bubble";
 
 import IntentLauncher, { IntentConstant } from 'react-native-intent-launcher';
 
