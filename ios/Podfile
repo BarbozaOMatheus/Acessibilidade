@@ -40,6 +40,8 @@ target 'acessibilidade' do
 
   pod 'react-native-slider', :path => '../node_modules/@react-native-community/slider'
 
+  pod 'RNExitApp', :path => '../node_modules/react-native-exit-app'
+
   target 'acessibilidadeTests' do
     inherit! :search_paths
     # Pods for testing
