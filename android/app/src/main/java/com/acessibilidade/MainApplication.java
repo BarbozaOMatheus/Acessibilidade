@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.github.wumke.RNExitApp.RNExitAppPackage;
 import com.reactnativecommunity.slider.ReactSliderPackage;
 import com.poberwong.launcher.IntentLauncherPackage;
 import com.zmxv.RNSound.RNSoundPackage;
